@@ -15,7 +15,7 @@
         </developer>
     </developers>
     
-    <build>        
+    <build>
         <plugins>
             <!-- Ajoute le code source dans Maven. -->
             <plugin>
