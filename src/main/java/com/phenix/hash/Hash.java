@@ -1,5 +1,6 @@
 package com.phenix.hash;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.xml.bind.DatatypeConverter;
 import java.io.File;
@@ -38,13 +39,15 @@ public final class Hash {
         /**
          *
          */
+        @NotNull
+        @NotBlank
         private final String valeur;
 
         /**
          *
          * @param valeur
          */
-        private Algorithme(String valeur) {
+        private Algorithme(@NotNull @NotBlank String valeur) {
             this.valeur = valeur;
         }
 
@@ -52,6 +55,8 @@ public final class Hash {
          *
          * @return
          */
+        @NotNull
+        @NotBlank
         @Override
         public String toString() {
             return this.valeur;
