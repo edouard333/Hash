@@ -21,7 +21,9 @@ import org.apache.commons.codec.digest.DigestUtils;
 public final class Hash {
 
     /**
-     * On ne peut pas instancier la classe.
+     * On ne peut pas instancier cette classe.
+     *
+     * @throws Exception On ne peut pas instancier cette classe.
      */
     private Hash() throws Exception {
         throw new Exception("Cette classe ne peut pas être instanciée.");
@@ -100,11 +102,12 @@ public final class Hash {
      * @param fichier Le fichier a faire le hash.
      * @return Le hash du fichier.
      *
-     * @throws NoSuchAlgorithmException Erreur si l'algorithme n'est pas trouvé.
      * @throws IOException Erreur dans le flux.
+     * @throws NoSuchAlgorithmException Erreur si l'algorithme n'est pas
+     * trouvé.·
      */
     @NotNull
-    public static String hashCompact(@NotNull File fichier) throws NoSuchAlgorithmException, IOException {
+    public static String hashCompact(@NotNull File fichier) throws IOException, NoSuchAlgorithmException {
         MessageDigest md5Digest = MessageDigest.getInstance("SHA-1");
 
         // Get file input stream for reading the file content
