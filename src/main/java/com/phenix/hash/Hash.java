@@ -39,29 +39,18 @@ public final class Hash {
         MD5("MD5");
 
         /**
-         *
+         * Valeur de l'algorithme
          */
         @NotNull
         @NotBlank
-        private final String valeur;
+        public final String value;
 
         /**
          *
          * @param valeur
          */
-        private Algorithme(@NotNull @NotBlank String valeur) {
-            this.valeur = valeur;
-        }
-
-        /**
-         *
-         * @return
-         */
-        @NotNull
-        @NotBlank
-        @Override
-        public String toString() {
-            return this.valeur;
+        private Algorithme(@NotNull @NotBlank String value) {
+            this.value = value;
         }
     }
 
@@ -91,7 +80,7 @@ public final class Hash {
      */
     @NotNull
     public static String calculHash(@NotNull File fichier, @NotNull Algorithme algorithme) throws IOException, NoSuchAlgorithmException {
-        MessageDigest md = MessageDigest.getInstance(algorithme.toString());
+        MessageDigest md = MessageDigest.getInstance(algorithme.value);
         md.update(Files.readAllBytes(fichier.toPath()));
         return DatatypeConverter.printHexBinary(md.digest()).toUpperCase();
     }
