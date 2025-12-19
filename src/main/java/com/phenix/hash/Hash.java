@@ -47,7 +47,7 @@ public final class Hash {
 
         /**
          *
-         * @param valeur
+         * @param value
          */
         private Algorithme(@NotNull @NotBlank String value) {
             this.value = value;
