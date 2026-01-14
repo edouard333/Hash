@@ -2,10 +2,17 @@
 Librairie qui gère les hashs de fichier.
 
 # Comment l'utiliser ?
-Utiliser la classe [`com.phenix.hash.Hash`](src/main/java/com/phenix/hash/Hash.java).
+Utiliser la classe :
 ```java
-Hash.calculHash(new File("fichier.f"));
-...
+import com.phenix.hash.Hash;
 ```
 
-Pour plus d'information, consulter la **[JavaDoc du projet](target/site/apidocs/index.html)**.
+Exemple :
+```java
+import com.phenix.hash.Hash;
+
+void main(String[] args) {
+    Hash.calculHash(new File("fichier.f"));
+    // ...
+}
+```
